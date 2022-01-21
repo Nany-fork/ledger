@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  per_mount: MyString
+  total_balance: 1
+  report: one
+
+two:
+  per_mount: MyString
+  total_balance: 1
+  report: two

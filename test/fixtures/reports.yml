@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  incomes: 1
+  expenses: 1
+  date: 2022-01-21 16:16:52
+  user: one
+
+two:
+  incomes: 1
+  expenses: 1
+  date: 2022-01-21 16:16:52
+  user: two

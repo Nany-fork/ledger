@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entry_type: MyString
+  description: MyString
+  quantity: 1
+  currency_cents: MyString
+  user: one
+  category: one
+
+two:
+  entry_type: MyString
+  description: MyString
+  quantity: 1
+  currency_cents: MyString
+  user: two
+  category: two
