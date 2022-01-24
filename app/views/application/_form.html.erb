@@ -1,0 +1,54 @@
+<%= form_with model: @balance do |form|%>
+  <h4 class="subtitle is-4">Balance</h4>
+    <div >
+      <div class="columns">
+        <div class="column is-one-fifth">
+          <label class="label">Entry type</label>
+            <div class="select is-medium">
+              <%= form.select :entry_type, ['income', 'expend'], selected: 'Entry type'%>
+            </div>
+        </div>
+
+        <div class="column is-one-fifth">
+          <label class="label">Reason of the entry</label>
+            <div class="select is-medium">
+              <%= form.select :category_id, [['cash',4],['receivables',4],['stock',4]], selected: 'Entry type'%>
+            </div>
+        </div>
+
+        <div class="column is-one-quarter">
+          <label class="label">Quantity</label>
+          <p class="control has-icons-left">
+            <%= form.text_field :quantity , class: "input is-medium" %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-dollar-sign"></i>
+            </span>
+          </p>
+        </div>
+
+        <div class="column is-one-quarter">
+          <label class="label">Date</label>
+          <p class="control has-icons-left">
+            <%= form.text_field :date , class: "input is-medium", placeholder: "yyyy-mm-dd" %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-calendar-day"></i>
+            </span>
+          </p>
+        </div>
+
+      </div>
+      <div class="columns">
+        <div class="column is-three-quarters">
+          <label class="label">Description</label>
+          <%= form.text_area :description , class: "textarea is-hovered", placeholder: "Description of your entry"%>
+        </div>
+      </div>
+
+      <div >
+          <%= form.submit class:"button is-link is-outlined"%>
+      </div>
+  </div>
+<% end %>
+
+
+

@@ -1,0 +1,56 @@
+<div class="header">
+  <h3 class="subtitle is-3 has-text-white">Welcome <%= current_user.name %></h3>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+
+<div class="row">
+  <div class="menu">
+   <%= render "menu" %>
+  </div>
+  
+  <div class="content-page">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+</div>
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the header */
+.header {
+  background-color: #23292D;
+  padding: 20px;
+  text-align: center;
+  color:#5073B8;
+}
+
+/* Create three equal columns that floats next to each other */
+.menu {
+  float: left;
+  width: 20%;
+  padding: 15px;
+}
+.content-page {
+  float: left;
+  width: 80%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>

@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_21_221652) do
+ActiveRecord::Schema.define(version: 2022_01_24_045650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "acumulateds", force: :cascade do |t|
+    t.string "per_mount"
+    t.integer "total_balance"
+    t.bigint "report_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["report_id"], name: "index_acumulateds_on_report_id"
+  end
 
   create_table "balances", force: :cascade do |t|
     t.string "entry_type"
@@ -24,6 +33,7 @@ ActiveRecord::Schema.define(version: 2022_01_21_221652) do
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "date", precision: 6
     t.index ["category_id"], name: "index_balances_on_category_id"
     t.index ["user_id"], name: "index_balances_on_user_id"
   end
@@ -60,6 +70,7 @@ ActiveRecord::Schema.define(version: 2022_01_21_221652) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "acumulateds", "reports"
   add_foreign_key "balances", "categories"
   add_foreign_key "balances", "users"
   add_foreign_key "reports", "users"
