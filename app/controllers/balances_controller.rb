@@ -14,6 +14,10 @@ class BalancesController < ApplicationController
         end
     end
     
+    def show
+        balance = Balance.all
+    end
+
     private
     def balance_params
       params.require(:balance).permit(:description, :entry_type, :quantity, :category_id,:currency_cents, :date)
