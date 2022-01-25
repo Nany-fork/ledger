@@ -1,20 +1,20 @@
 <% if current_user %>
     <%= render "base" %>
-    <div class="container is-max-desktop">
-      <div class="columns">
-        <div class="column">
-            First column
+    <div class="container is-max-desktop pt-5">
+        <div class="columns">
+            <div class="column">
+                <p class="title is-2">Balance</p>
+            </div>
+            <div class="column">
+                
+            </div>
+            <div class="column">
+            
+            </div>
+            <div class="column">
+                <%= link_to "New balance", balances_path ,class:'button is-link is-outlined' %>
+            </div>
         </div>
-        <div class="column">
-            Second column
-        </div>
-        <div class="column">
-            Third column
-        </div>
-        <div class="column">
-            Fourth column
-        </div>
-</div>
     </div>
 
 <% end %>
